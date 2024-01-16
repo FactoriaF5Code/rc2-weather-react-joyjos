@@ -1,0 +1,21 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+:root {
+  --frencBlue: #1c77c3;
+  --pictonBlue: #39a9db;
+  --aero: #40bcd8;
+  --carrotOrange: #f39237;
+  --persianRed: #d63230;
+}
