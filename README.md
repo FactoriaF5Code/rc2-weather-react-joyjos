@@ -22,10 +22,6 @@ npm install
 ```
 npm install axios
 ```
-### Instalo el paquete dotenv para las variables de entorno
-```
-npm install dotenv
-```
 ### Lanzo la aplicación
 ```
 npm run dev
