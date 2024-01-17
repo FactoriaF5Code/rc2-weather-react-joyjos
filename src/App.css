@@ -13,9 +13,11 @@
 }
 
 :root {
-  --frencBlue: #1c77c3;
+  --frenchBlue: #1c77c3;
   --pictonBlue: #39a9db;
   --aero: #40bcd8;
   --carrotOrange: #f39237;
   --persianRed: #d63230;
+  --white: #fff;
+  --background: #f4f4f4;
 }

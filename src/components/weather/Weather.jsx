@@ -1,26 +1,51 @@
+import './Weather.css';
+
+import { useState } from 'react';
 import axios from 'axios';
-import { useState, useEffect } from 'react';
-import { City } from '../city/City';
 
 export const Weather = () => {
-  const [data, setData] = useState();
+  const [city, setCity] = useState('');
+  const [weatherData, setWeatherData] = useState(null);
 
-  useEffect(() => {
-    axios
-      .get('https://www.el-tiempo.net/api/json/v2/home')
-      .then((response) => {
-        console.log(response.data);
-        setData(response.data.ciudades);
-      })
-      .catch((err) => console.error('Error al obtener datos:', err));
-  }, []);
+  const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
+
+  const getWeatherData = async () => {
+    try {
+      const response = await axios.get(
+        `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`
+      );
+      setWeatherData(response.data);
+    } catch (error) {
+      console.error('Error fetching weather data:', error);
+    }
+  };
 
   return (
-    <main>
-      <h1>Weather</h1>
-      {data && Array.isArray(data)
-        ? data.map((city) => <City key={city.id} {...city} />)
-        : console.error('La variable no es un array o es undefined')}
-    </main>
+    <div>
+      <h1>Qué tiempo hace?</h1>
+      <label>Ciudad:</label>
+      <input
+        type='text'
+        value={city}
+        onChange={(e) => setCity(e.target.value)}
+      />
+
+      <button onClick={getWeatherData}>Obtener Tiempo</button>
+
+      {weatherData && (
+        <div>
+          <h2>{weatherData.location.name}</h2>
+          <h3>{weatherData.location.region}</h3>
+          <p>Temperatura: {weatherData.current.temp_c}°C</p>
+          <p>{weatherData.current.condition.text}</p>
+          {weatherData.current.condition.icon && (
+            <img
+              src={`https:${weatherData.current.condition.icon}`}
+              alt='Weather Icon'
+            />
+          )}
+        </div>
+      )}
+    </div>
   );
 };
