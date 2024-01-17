@@ -18,9 +18,13 @@ npm init vite .
 ```
 npm install
 ```
-### Instalo Axios
+### Instalo Axios para las peticiones a la API
 ```
 npm install axios
+```
+### Instalo el paquete dotenv para las variables de entorno
+```
+npm install dotenv
 ```
 ### Lanzo la aplicación
 ```
