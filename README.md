@@ -10,6 +10,9 @@ Currently, two official plugins are available:
 # Qué tiempo hace?
 Aplicación que muestra datos del tiempo de la ciudad escogida
 
+`[NOTA]`  
+Tienes que implementar tu API_KEY de https://www.weatherapi.com/ si quieres que funcione la aplicación
+
 ### Inicializo el proyecto React + Vite
 ```
 npm init vite .
