@@ -8,11 +8,13 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 # Qué tiempo hace?
-Aplicación que muestra datos del tiempo de la ciudad escogida
+Aplicación que muestra datos del tiempo de la ciudad escogida<br><br><br>
 
-`[NOTA]`  
-Tienes que implementar tu API_KEY de https://www.weatherapi.com/ si quieres que funcione la aplicación
+>[!IMPORTANT]
+>
+>Tienes que implementar tu API_KEY de [Weather API](https://www.weatherapi.com/) si quieres que funcione la aplicación
 
+<br><br>
 ### Inicializo el proyecto React + Vite
 ```
 npm init vite .
